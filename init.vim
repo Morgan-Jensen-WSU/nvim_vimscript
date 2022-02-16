@@ -38,6 +38,9 @@ Plug 'hrsh7th/nvim-compe'
 " Syntax highlighting 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+" File Exploration
+Plug 'preservim/nerdtree'
+
 " Code snippets
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
@@ -61,6 +64,12 @@ let mapleader = " "
 nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
 nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>
 nnoremap <leader>pf :lua require('telescope.builtin').find_files()<CR>
+
+" NerdTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 " lsp
 source ~/.config/nvim/plug-config/lsp-config.vim
